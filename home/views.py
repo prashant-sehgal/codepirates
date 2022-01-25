@@ -60,7 +60,7 @@ def reply(request, id):
         content = f"Your message: {message.view}\nReply: {reply}\n\n if you are not satified with this reply, you can ask us again.\n You can use Our emails- goldysehgal.95790@outlook.com, prashantsehgal.95790@gmail.com or you can ask us on Twitter handle: https://www.twitter.com/goldysehgal_ with #codequery, or you can simply use Contact us tab on Code Pirates"
     
         try:
-            send_mail(subject, content, 'goldysehgal.95790@outlook.com', [message.email], fail_silently=False)
+            send_mail(subject, content, 'goldysehgal.95790@gmail.com', [message.email], fail_silently=False)
         except Exception as error:
             return HttpResponse('Reply is not send due to {} \n <h3><a href="/messages/rest">Return to Messages</h3>'.format(error))
         message.date = date
