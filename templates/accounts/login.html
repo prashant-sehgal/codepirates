@@ -1,0 +1,27 @@
+{% extends 'home/layout.html' %}
+{% block body %}
+  <title>Sign in into Code Pirates</title>
+  <main>
+    <div class="container my-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-5">
+                <div class="card shadow-lg border-0 rounded-lg mt-5">
+                    <div class="card-header"><h3 class="text-center font-weight-light my-4">Sign in into Code Pirates</h3></div>
+                    <div class="card-body">
+                        <form action="/login/" method="POST">{% csrf_token %}
+                            <div class="form-group"><label class="small mb-1" for="inputEmailAddress">Username</label><input class="form-control py-4" id="inputEmailAddress" type="text" placeholder="Enter Username" name="username" value="{{username}}"  required/></div>
+                            <div class="form-group"><label class="small mb-1" for="inputPassword">Password</label><input class="form-control py-4" id="inputPassword" type="password" placeholder="Enter password" name="password" required /></div>
+                            <p class="text-danger extra-large">{{error}}</p>
+                            <div class="form-group d-flex align-items-center justify-content-between mt-4 mb-0"><input type="submit" value="Sign in" class="input_submit btn-block"></div>
+                        </form>
+                    </div>
+                    <div class="card-footer text-center">
+                        <div class="large"><a href="" onclick="alert('If you are already a user, then we had sended your account details on you registered email at the time of Account Registeration.')">Forgot username or password</a></div>
+                        <div class="large mt-2"><a href="/join/">Need an account? Sign up!</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </main>
+{% endblock %}

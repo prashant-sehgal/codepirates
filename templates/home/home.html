@@ -1,0 +1,173 @@
+{% extends 'home/layout.html' %}
+{% load static %}
+{% block body %}
+  <title>Code Pirates</title>
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="d-flex align-items-center">
+
+    <div class="container d-flex flex-column align-items-center justify-content-center" data-aos="fade-up">
+      <h1>We provide rapid solution for you to Learn</h1>
+      <h2>“Make it work, make it right, make it fast.”</h2>
+      {% if user.is_authenticated == False %}
+      <a href="join/" class="btn-get-started scrollto">Sign up</a>
+      {% endif %}
+      <img src="{% static 'home/assets/img/hero-img.png' %}" class="img-fluid hero-img" alt="" data-aos="zoom-in" data-aos-delay="150">
+    </div>
+
+  </section><!-- End Hero -->
+
+  <main id="main">
+
+    <!-- ======= About Section ======= -->
+    <section id="about" class="about">
+      <div class="container">
+
+        <div class="row no-gutters">
+          <div class="content col-xl-5 d-flex align-items-stretch" data-aos="fade-right">
+            <div class="content">
+              <h3>Why CODE PIRATES</h3>
+              <p>
+                Their are a lot of booming technology now days like Machine Learning, Deep Learning, Clouds etc. While learning
+                online we sped a lot of time in research rather than learning technologies. Here we did that research for you.
+                We go to worlds biggest platforms such as Youtube and got best free playlist and videos from their. After you register 
+                an official account on Code Pirates, we will provides all playlist to you and we also provide Contact us tab where you can as 
+                any query. For more technology related posts by us, visit our Blog from top navigation bar.
+            </div>
+          </div>
+          <div class="col-xl-7 d-flex align-items-stretch" data-aos="fade-left">
+            <div class="icon-boxes d-flex flex-column justify-content-center">
+              <div class="row">
+                <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="100">
+                  <img src="{% static 'home/assets/img/youtube-logo.png' %}" height="40" class="mb-4">
+                  <!-- <h4>Corporis voluptates sit</h4> -->
+                  <p>YouTube is a major platform from where we get playlists for you, From channels such as Telusko, SimpliLeanr</p>
+                </div>
+                <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="200">
+                  <img src="{% static 'home/assets/img/code.png' %}" height="60" class="mb-3">
+                  <p>We have a lot of playlist and topics such as Machine Learning, Deep Learning, Web Development, Mobile App Development etc.</p>
+                </div>
+                <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="300">
+                  <img src="{% static 'home/assets/img/up-to-date.png' %}" height="60" class="mb-4">
+                  <p>
+                    We research continously to remain up to date with best playtlist and videos. If you have any suggestion you 
+                    can use Contact tab to tell us about it, you will surely get a reply.
+                  </p>
+                </div>
+            </div><!-- End .content-->
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End About Section -->
+    {% if user.is_authenticated %}
+    <!-- ======= Portfolio Section ======= -->
+    <section id="portfolio" class="portfolio">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Videos</h2>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-12 d-flex justify-content-center">
+            <ul id="portfolio-flters">
+              <li data-filter="*" class="filter-active">All</li>
+              <li data-filter=".filter-artificial_intelligence">Artificial Intelligence</li>
+              <li data-filter=".filter-programming">Programming</li>
+              <li data-filter=".filter-web_development">Web Development</li>
+              <li data-filter=".filter-mobile_development">Mobile Development</li>
+              <li data-filter=".filter-data">Data</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="row portfolio-container">
+          {% for playlist in playlists %}
+          <div class="col-lg-4 col-md-6 portfolio-item filter-{{playlist.filter}}">
+            <div class="portfolio-wrap">
+              <img src="{{playlist.image.url}}" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>{{playlist.name}}</h4>
+                <div class="portfolio-links">
+                  <a href="playlist/{{playlist.name}}/" title="More Details"><i class="bx bx-link"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </section><!-- End Portfolio Section -->
+
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="contact section-bg">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Contact</h2>
+          <p>You can contact us by using our two email's written bellow or by using twitter handle given bellow, do not forgot to use <font color="blue">#codequery</font> on email or twitter.
+            But is you want to be more simple and quick, you can use form given bellow with pre-written your name and email. If you use form bellow, you can view our reply on your register email or on <a href="/profile/">Hello, {{user.first_name}}</a> tab from navigation bar
+          </p>
+        </div>
+
+        <div class="row">
+
+          <div class="col-lg-6">
+
+            <div class="row">
+              <div class="col-md-12">
+                <div class="info-box">
+                  <img src="{% static 'home/assets/img/twitter-logo.png' %}" height="80">
+                  <h3><a href="Twitter" onClick="window.open('https://www.twitter.com/@PrashantSehgal_','Twitter','resizable,height=500,width=800'); return false;">Follow us on Twitter</a></h3>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="info-box mt-4">
+                  <a href="mailto:prashantsehgal.95790@gmail.com">
+                    <img src="{% static 'home/assets/img/gmail.png' %}" height="80">
+                    <h3 class="text-danger">Gmail</h3>
+                  </a>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="info-box mt-4">
+                  <a href="mailto: goldysehgal.95790@outlook.com" >
+                    <img src="{% static 'home/assets/img/outlook-logo.png' %}" height="60" class="mb-3">
+                    <h3 class="text-primary">Outlook</h3>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-lg-6 mt-4 mt-md-0">
+            <form action="send_message/" method="POST">{% csrf_token %}
+              <div class="row">
+                <div class="col">
+                  <label for="exampleFormControlTextarea1">Your Name</label>
+                  <input type="text" class="form-control" placeholder="First name" value="{{user.first_name}} {{user.last_name}}" readonly>
+                </div>
+                <div class="col">
+                  <label for="exampleFormControlTextarea1">Your Email</label>
+                  <input type="email" class="form-control" placeholder="First name" value="{{user.email}}" readonly>
+                </div>
+              </div>
+              <div class="form-group mt-3">
+                <label for="exampleFormControlTextarea1">Your Message</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="5" placeholder="type here..." name="message" required></textarea>
+              </div>
+              <div class="text-center"><input type="submit" value="Send Message" class="input_submit"></div>
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End Contact Section -->
+    {% endif %}
+
+  </main><!-- End #main -->
+
+  <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
+  <div id="preloader"></div>
+{% endblock %}

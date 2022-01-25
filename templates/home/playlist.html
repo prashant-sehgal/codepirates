@@ -1,0 +1,83 @@
+{% extends 'home/layout.html' %}
+{% block body %}
+  <title>{{playlist.name}} -Code Pirates</title>
+  <!--Body-->
+  <main is="main">
+    <section id="breadcrumbs" class="breadcrumbs">
+        <div class="container">
+          <ol>
+            <li><a href="/">Home</a></li>
+            <li><a href="/#portfolio">Videos</a></li>
+            <li>{{playlist.name}}</li>
+          </ol>
+        </div>
+      </section><!-- End Breadcrumbs -->
+
+      <div class="container">
+        <div class="row">
+
+            <div class="col-lg-8">
+                <div style="max-width: 900px;">
+                    <div class="" style="padding-bottom: 56.25%; position: relative;">
+                      <iframe style="position: absolute; width: 100%; height: 100%;" src="{{playlist.source}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <div class="feedback mt-2">
+                  <a href="feedback/0" class="btn {{dislikedClass}} float-right ml-1">Dislike ({{feedback.dislikedUsers|length}})</a>
+                  <a href="feedback/1" class="btn {{likedClass}} float-right mr-1">Like ({{feedback.likedUsers|length}})</a>
+                </div>
+
+                <div class="portfolio-info mt-5">
+                  <h3>{{playlist.name}}</h3>
+                  <ul>
+                    <li><strong>Project date</strong>: {{playlist.date}}</li>
+                  </ul>
+                  <p>
+                    {{playlist.description}}
+                  </p>
+                </div>
+
+            </div>
+
+            <div class="col-lg-4">
+                <div class="p-3 mb-2 bg-white" style="color: #3b4ef8;">Comments
+                    <button type="button" class="input_submit float-right" data-toggle="modal" data-target="#exampleModalCenter">
+                        Add Comment
+                    </button>
+                </div>
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle" style="color: #3b4ef8;">Add a Comment</h5>
+                        </div>
+                        <div class="modal-body">
+                            <form action="comment" method="POST">{% csrf_token %}
+                                <div class="form-group">
+                                  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Type here..."  name="comment" required></textarea>
+                                </div>
+                                <input type="submit" value="Comment" class="input_submit">
+                            </form>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                <div class="comments" style="max-height: 400px; overflow-y: scroll; min-height: 20px;">
+                  {% for comment in comments %}
+                  <div class="comment border-bottom border-dark">
+                    <h5 class="text-primary d-inline">#<u>{{comment.username}}</u></h5>
+                    <p class="float-right d-inline" style="margin-right: 1vh;">{{comment.date}}</p>
+                    <p>{{comment.view}}</p>
+                  </div>
+                  {% endfor %}
+                  {% if comments|length == 0 %}
+                  <p style="font-size: 15px;text-align: center;" class="mt-5">Their are no comments on this playlist yet</p>
+                  {% endif %}
+                </div>
+            </div>
+
+        </div>
+      </div>
+  </main>
+{% endblock %}

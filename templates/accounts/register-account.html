@@ -1,0 +1,29 @@
+{% extends 'home/layout.html' %}
+{% block body %}
+  <title>Confirm Email on Code Pirates</title>
+  <main>
+    <div class="container my-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-5">
+                <div class="card shadow-lg border-0 rounded-lg mt-5">
+                    <div class="card-header"><h3 class="text-center font-weight-light my-4">Confirm Email</h3></div>
+                    <div class="card-body">
+                        <div class="extra-large mb-3 text-dark">We send a 6-digit One Time Password on your email {{email}}, copy that One Time Password from email and 
+                            copy it here, then you will be regitered as an officail user of Code Pirates.
+                        </div>
+                        <form action="register_account" method="POST">{% csrf_token %}
+                            <div class="form-group"><label class="large mb-1" for="inputEmailAddress">One Time Password</label><input class="form-control py-4" id="inputEmailAddress" type="number" aria-describedby="emailHelp" placeholder="6-digits OTP" name="userOTP" required />
+                            <p class="text-danger extra-large">{{error}}</p>
+                            </div>
+                            <div class="form-group d-flex align-items-center justify-content-between mt-4 mb-0"><a class="small" href="/login/">Return to login</a><input type="submit" value="Register Account" class="input_submit"></div>
+                        </form>
+                    </div>
+                    <div class="card-footer text-center">
+                        <div class="small"><a href="/join/">Need an account? Sign up!</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </main>
+{% endblock %}

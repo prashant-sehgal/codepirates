@@ -1,0 +1,41 @@
+{% extends 'home/layout.html' %}
+{% block body %}
+  <title>Messages -Code Pirates</title>
+
+  <!--Body part-->
+  <section id="breadcrumbs" class="breadcrumbs">
+    <h5 class="text-center mb-3 mt-2">
+      <a href="all">Total Messages</a> recieved: {{totalMessages}},
+      <a href="answered">Answered</a>: {{answered}}, 
+      <a href="rest">Rest</a>: {{rest}}</h5>
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">id</th>
+            <th scope="col">Sender</th>
+            <th scope="col">Email</th>
+            <th scope="col">View</th>
+            <th scope="col">Reply</th>
+          </tr>
+        </thead>
+        <tbody>
+            {% for message in messages %}
+            <tr>
+              <th scope="row">{{message.id}}</th>
+              <td>{{message.sender}}</td>
+              <td>{{message.email}}</td>
+              <td>{{message.view}}</td>
+              <td>
+                  <form action="reply/{{message.id}}" method="POST">{% csrf_token %}
+                      <div class="form-group">
+                          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" cols="20" placeholder="Reply Message" name="reply" required></textarea>
+                      </div>
+                      <input type="submit" value="Reply" class="input_submit">
+                  </form>
+              </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+      </table>
+  </section>
+{% endblock %}
