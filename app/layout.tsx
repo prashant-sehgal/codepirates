@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { SpeedInsights } from '@vercel/speed-insights/next'
 import './globals.css'
 import Header from './components/Header'
 import Footer from './components/Footer'
@@ -65,6 +66,8 @@ export default function RootLayout({
 
         {/* <!-- Main JS File --> */}
         <script src="assets/js/main.js"></script>
+
+        <SpeedInsights />
       </body>
     </html>
   )
