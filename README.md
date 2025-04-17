@@ -1,31 +1,36 @@
-# Code Pirates
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-#### Their are a lot of booming technology now days like Machine Learning, Deep Learning, Clouds etc. While learning
+## Getting Started
 
-#### online we sped a lot of time in research rather than learning technologies. Here we did that research for you.
+First, run the development server:
 
-#### We go to worlds biggest platforms such as Youtube and got best free playlist and videos from their.
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
+```
 
-#### This is all done with the help of PYthon Django Framework, JavaScript, CSS and HTML.
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-## Here it's our project website looks like
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-### home Page /
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-![alt text](/Git-CON/img1.PNG)
+## Learn More
 
-### About Section /
+To learn more about Next.js, take a look at the following resources:
 
-![alt text](/Git-CON/img2.PNG)
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-### There is a videos section where all our embended videos and playlist from YouTube /
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-![alt text](/Git-CON/img3.PNG)
+## Deploy on Vercel
 
-### After Clicking on One topic
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-![alt text](/Git-CON/img5.PNG)
-
-### Contact Section Section /
-
-![alt text](/Git-CON/img4.PNG)
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
