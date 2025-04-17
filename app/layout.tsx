@@ -54,6 +54,12 @@ export default function RootLayout({
         {children}
         <Footer />
 
+        <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3134570032680567"
+          crossOrigin="anonymous"
+        ></script>
+
         {/* <!-- Vendor JS Files --> */}
         <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
         <script src="assets/vendor/php-email-form/validate.js"></script>
