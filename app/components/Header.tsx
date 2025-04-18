@@ -13,28 +13,26 @@ export default function Header() {
         <nav id="navmenu" className="navmenu">
           <ul>
             <li>
-              <a href="#hero" className="active">
+              <a href="/#hero" className="active">
                 Home
                 <br />
               </a>
             </li>
             <li>
-              <a href="#about">About</a>
+              <a href="/#about">About</a>
             </li>
 
             <li>
-              <a href="#videos">Videos</a>
+              <a href="/#videos">Videos</a>
             </li>
 
             <li>
-              <a href="#contact">Contact Us</a>
+              <a href="/#contact">Contact Us</a>
             </li>
           </ul>
           <i className="mobile-nav-toggle d-xl-none bi bi-list" />
         </nav>
-        <a className="btn-getstarted flex-md-shrink-0" href="index.html#about">
-          Sign In
-        </a>
+        <button className="btn-getstarted flex-md-shrink-0">Sign In</button>
       </div>
     </header>
   )
