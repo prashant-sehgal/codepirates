@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import React from 'react'
+import User from './User'
 
 export default function Header() {
   return (
@@ -32,7 +33,7 @@ export default function Header() {
           </ul>
           <i className="mobile-nav-toggle d-xl-none bi bi-list" />
         </nav>
-        <button className="btn-getstarted flex-md-shrink-0">Sign In</button>
+        <User />
       </div>
     </header>
   )

@@ -3,6 +3,7 @@ import { SpeedInsights } from '@vercel/speed-insights/next'
 import './globals.css'
 import Header from './components/Header'
 import Footer from './components/Footer'
+import AuthProvider from './AuthProvider'
 
 export const metadata: Metadata = {
   title: 'Code Pirates',
@@ -50,9 +51,11 @@ export default function RootLayout({
         <link href="assets/css/main.css" rel="stylesheet" />
       </head>
       <body>
-        <Header />
-        {children}
-        <Footer />
+        <AuthProvider>
+          <Header />
+          {children}
+          <Footer />
+        </AuthProvider>
 
         <script
           async
