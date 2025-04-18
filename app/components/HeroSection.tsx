@@ -20,13 +20,6 @@ export default function HeroSection() {
               <a href="#about" className="btn-get-started">
                 Get Started <i className="bi bi-arrow-right" />
               </a>
-              <a
-                href="https://www.youtube.com/watch?v=EFmxPMdBqmU&t=89s"
-                className="glightbox btn-watch-video d-flex align-items-center justify-content-center ms-0 ms-md-4 mt-4 mt-md-0"
-              >
-                <i className="bi bi-play-circle" />
-                <span>Animation vs. Coding</span>
-              </a>
             </div>
           </div>
           <div
