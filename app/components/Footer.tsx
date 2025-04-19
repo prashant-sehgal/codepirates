@@ -50,7 +50,7 @@ export default function Footer() {
               </li>
               <li>
                 <i className="bi bi-chevron-right" />
-                <a href="/#video">Videos</a>
+                <a href="/#videos">Videos</a>
               </li>
               <li>
                 <i className="bi bi-chevron-right" />
