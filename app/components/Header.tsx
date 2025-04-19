@@ -28,7 +28,7 @@ export default function Header() {
             </li>
 
             <li>
-              <a href="/#contact">Contact Us</a>
+              <a href="/#contact">Contact</a>
             </li>
           </ul>
           <i className="mobile-nav-toggle d-xl-none bi bi-list" />

@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import React from 'react'
 
 export default function ContactSection() {
@@ -15,37 +16,50 @@ export default function ContactSection() {
             <div className="row gy-4">
               <div className="col-md-6">
                 <div className="info-item" data-aos="fade" data-aos-delay={200}>
-                  <i className="bi bi-geo-alt" />
-                  <h3>Address</h3>
-                  <p>A108 Adam Street</p>
-                  <p>New York, NY 535022</p>
+                  <i className="bi bi-envelope" />
+                  <h3>Email Us</h3>
+                  <Link
+                    href="mailto:prashant_sehgal@outlook.com?subject=#AskCodePirates Quick Query Inside"
+                    target="_blank"
+                  >
+                    prashant_sehgal@outlook.com
+                  </Link>
                 </div>
               </div>
               {/* End Info Item */}
               <div className="col-md-6">
                 <div className="info-item" data-aos="fade" data-aos-delay={300}>
-                  <i className="bi bi-telephone" />
-                  <h3>Call Us</h3>
-                  <p>+1 5589 55488 55</p>
-                  <p>+1 6678 254445 41</p>
+                  <i className="bi bi-linkedin" />
+                  <h3>LinkedIn</h3>
+                  <Link
+                    href="https://www.linkedin.com/in/prashantsehgal~/"
+                    target="_blank"
+                  >
+                    Linkedin.com/prashantsehgal~
+                  </Link>
                 </div>
               </div>
               {/* End Info Item */}
               <div className="col-md-6">
                 <div className="info-item" data-aos="fade" data-aos-delay={400}>
-                  <i className="bi bi-envelope" />
-                  <h3>Email Us</h3>
-                  <p>info@example.com</p>
-                  <p>contact@example.com</p>
+                  <i className="bi bi-twitter-x" />
+                  <h3>X.com</h3>
+                  <Link href="https://x.com/prashantsehgal_" target="_blank">
+                    X.com/prashantsehgal_
+                  </Link>
                 </div>
               </div>
               {/* End Info Item */}
               <div className="col-md-6">
                 <div className="info-item" data-aos="fade" data-aos-delay={500}>
-                  <i className="bi bi-clock" />
-                  <h3>Open Hours</h3>
-                  <p>Monday - Friday</p>
-                  <p>9:00AM - 05:00PM</p>
+                  <i className="bi bi-instagram" />
+                  <h3>Instagram</h3>
+                  <Link
+                    href="https://www.instagram.com/prashantsehgal_?utm_source=qr"
+                    target="_blank"
+                  >
+                    Instagram.com/prashantsehgal_
+                  </Link>
                 </div>
               </div>
               {/* End Info Item */}

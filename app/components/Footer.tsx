@@ -42,17 +42,19 @@ export default function Footer() {
             <h4>Useful Links</h4>
             <ul>
               <li>
-                <i className="bi bi-chevron-right" /> <a href="#">Home</a>
-              </li>
-              <li>
-                <i className="bi bi-chevron-right" /> <a href="#">About us</a>
-              </li>
-              <li>
-                <i className="bi bi-chevron-right" /> <a href="#">Services</a>
+                <i className="bi bi-chevron-right" /> <a href="/#hero">Home</a>
               </li>
               <li>
                 <i className="bi bi-chevron-right" />
-                <a href="#">Terms of service</a>
+                <a href="/#about">About</a>
+              </li>
+              <li>
+                <i className="bi bi-chevron-right" />
+                <a href="/#video">Videos</a>
+              </li>
+              <li>
+                <i className="bi bi-chevron-right" />
+                <a href="/#contact">Contact</a>
               </li>
             </ul>
           </div>
@@ -83,7 +85,7 @@ export default function Footer() {
       <div className="container copyright text-center mt-4">
         <p>
           © <span>Copyright</span>
-          <strong className="px-1 sitename">FlexStart</strong>
+          <strong className="px-1 sitename">Code Pirates</strong>
           <span>All Rights Reserved</span>
         </p>
         <div className="credits">
