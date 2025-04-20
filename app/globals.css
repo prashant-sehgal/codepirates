@@ -1,0 +1,14 @@
+.signinBtn {
+  background: none;
+  border: 1px solid gray;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  height: 3rem;
+  transition: 50ms ease;
+}
+
+.signinBtn:hover {
+  background: #f4f4f4;
+}

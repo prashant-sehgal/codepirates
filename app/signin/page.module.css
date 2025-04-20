@@ -1,6 +1,15 @@
 .page {
-  width: 20rem;
+  margin-top: 8rem;
+  height: calc(100vh - 18rem);
+}
+
+.page section {
+  width: 90%;
+  max-width: 25rem;
   margin: auto;
-  margin-top: 6rem;
-  height: calc(100vh - 8rem);
+}
+
+.page form {
+  background: none !important;
+  padding: 0 !important;
 }
