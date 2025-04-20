@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import React from 'react'
 import User from './User'
+import AuthGuard from './AuthGuard'
 
 export default function Header() {
   return (
@@ -23,9 +24,11 @@ export default function Header() {
               <a href="/#about">About</a>
             </li>
 
-            <li>
-              <a href="/#videos">Videos</a>
-            </li>
+            <AuthGuard>
+              <li>
+                <a href="/#videos">Videos</a>
+              </li>
+            </AuthGuard>
 
             <li>
               <a href="/#contact">Contact</a>

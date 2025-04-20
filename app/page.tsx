@@ -4,23 +4,17 @@ import HeroSection from './components/HeroSection'
 import AboutSection from './components/AboutSection'
 import VideoSection from './components/VideoSection'
 import ContactSection from './components/ContactSection'
+import AuthGuard from './components/AuthGuard'
 
 export default function Home() {
   return (
-    <div className={styles.page}>
-      <main className="main">
-        <HeroSection />
-        <AboutSection />
+    <main className="main">
+      <HeroSection />
+      <AboutSection />
+      <AuthGuard>
         <VideoSection />
-        <ContactSection />
-      </main>
-      <a
-        href="#"
-        id="scroll-top"
-        className="scroll-top d-flex align-items-center justify-content-center"
-      >
-        <i className="bi bi-arrow-up-short" />
-      </a>
-    </div>
+      </AuthGuard>
+      <ContactSection />
+    </main>
   )
 }
