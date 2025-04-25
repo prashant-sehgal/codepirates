@@ -1,30 +1,18 @@
 import React from 'react'
 import styles from './page.module.css'
-import Link from 'next/link'
-import Image from 'next/image'
 import SignInWithGoogle from '../components/SignInWithGoogle'
+import SignInInput from '../components/SignInInput'
+import SignInForm from '../components/SignInForm'
 
 export default function page() {
   return (
     <main className={styles.page}>
       <section className="contact section">
         <h5 className="fw-bold">Sign in or create account</h5>
-        <form
-          action="forms/contact.php"
-          method="post"
-          className="php-email-form"
-          data-aos="fade-up"
-          data-aos-delay={200}
-        >
+        <SignInForm>
           <div className="row gy-4">
             <div className="col-12">
-              <input
-                type="email"
-                className="form-control"
-                name="email"
-                placeholder="Enter your email address"
-                required
-              />
+              <SignInInput />
             </div>
 
             <div className="col-12 text-center d-flex flex-column gap-3">
@@ -39,7 +27,7 @@ export default function page() {
               <SignInWithGoogle />
             </div>
           </div>
-        </form>
+        </SignInForm>
       </section>
     </main>
   )

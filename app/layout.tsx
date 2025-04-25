@@ -5,6 +5,7 @@ import Header from './components/Header'
 import Footer from './components/Footer'
 import AuthProvider from './AuthProvider'
 import ScrollTop from './components/ScrollTop'
+import SignInProvider from './contexts/SignInContext'
 
 export const metadata: Metadata = {
   title: 'Code Pirates',
@@ -53,10 +54,12 @@ export default function RootLayout({
       </head>
       <body>
         <AuthProvider>
-          <Header />
-          {children}
-          <Footer />
-          <ScrollTop />
+          <SignInProvider>
+            <Header />
+            {children}
+            <Footer />
+            <ScrollTop />
+          </SignInProvider>
         </AuthProvider>
 
         <script
