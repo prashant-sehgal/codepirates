@@ -1,0 +1,8 @@
+.page {
+  margin-top: 3rem;
+}
+
+.videoFrame {
+  width: 100%;
+  aspect-ratio: 16/9;
+}
