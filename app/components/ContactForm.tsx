@@ -11,14 +11,25 @@ export default function ContactForm() {
   const [successIndicator, setSuccessIndicator] = useState(false)
   const [messageSent, setMessageSent] = useState(false)
 
-  function onSubmitForm(event: React.FormEvent<HTMLFormElement>) {
+  async function onSubmitForm(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault()
-    setMessageSent(false)
-    setSuccessIndicator(true)
-    // console.log({ firstName, email, subject, message })
-    setTimeout(function () {
+    try {
+      setMessageSent(false)
+      setSuccessIndicator(true)
+      const response = await fetch('/api/messages', {
+        method: 'POST',
+        body: JSON.stringify({ firstName, email, subject, message }),
+      })
+      const result = await response.json()
+
+      if (!response.ok || result.status !== 'success')
+        throw new Error("something wen't wrong")
+
       setMessageSent(true)
-    }, 1000)
+    } catch (err) {
+      setMessageSent(false)
+      setSuccessIndicator(false)
+    }
   }
 
   return (
