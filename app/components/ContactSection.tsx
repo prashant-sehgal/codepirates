@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import React from 'react'
+import ContactForm from './ContactForm'
 
 export default function ContactSection() {
   return (
@@ -74,86 +75,7 @@ export default function ContactSection() {
           <div className="col-lg-10">
             <div className="contact-form-wrapper">
               <h2 className="text-center mb-4">Get in Touch</h2>
-              <form
-                action="forms/contact.php"
-                method="post"
-                className="php-email-form"
-              >
-                <div className="row g-3">
-                  <div className="col-md-6">
-                    <div className="form-group">
-                      <div className="input-with-icon">
-                        <i className="bi bi-person" />
-                        <input
-                          type="text"
-                          className="form-control"
-                          name="name"
-                          placeholder="First Name"
-                          required
-                        />
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-md-6">
-                    <div className="form-group">
-                      <div className="input-with-icon">
-                        <i className="bi bi-envelope" />
-                        <input
-                          type="email"
-                          className="form-control"
-                          name="email"
-                          placeholder="Email Address"
-                          required
-                        />
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-md-12">
-                    <div className="form-group">
-                      <div className="input-with-icon">
-                        <i className="bi bi-text-left" />
-                        <input
-                          type="text"
-                          className="form-control"
-                          name="subject"
-                          placeholder="Subject"
-                          required
-                        />
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-12">
-                    <div className="form-group">
-                      <div className="input-with-icon">
-                        <i className="bi bi-chat-dots message-icon" />
-                        <textarea
-                          className="form-control"
-                          name="message"
-                          placeholder="Write Message..."
-                          style={{ height: 180 }}
-                          required
-                          defaultValue={''}
-                        />
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-12">
-                    <div className="loading">Loading</div>
-                    <div className="error-message" />
-                    <div className="sent-message">
-                      Your message has been sent. Thank you!
-                    </div>
-                  </div>
-                  <div className="col-12 text-center">
-                    <button
-                      type="submit"
-                      className="btn btn-primary btn-submit"
-                    >
-                      SEND MESSAGE
-                    </button>
-                  </div>
-                </div>
-              </form>
+              <ContactForm />
             </div>
           </div>
         </div>
