@@ -3,6 +3,8 @@ import './globals.css'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import ScrollToTop from './components/ScrollToTop'
+import SearchProvider from './contexts/search.context'
+import Search from './components/search/Search'
 
 export const metadata: Metadata = {
   title: 'Code Pirates',
@@ -39,10 +41,13 @@ export default function RootLayout({
         <link href="/assets/css/main.css" rel="stylesheet" />
       </head>
       <body>
-        <Header />
-        {children}
-        <Footer />
-        <ScrollToTop />
+        <SearchProvider>
+          <Search />
+          <Header />
+          {children}
+          <Footer />
+          <ScrollToTop />
+        </SearchProvider>
 
         {/* Vendor JS Files */}
         <script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
