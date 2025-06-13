@@ -1,4 +1,8 @@
+import Image from 'next/image'
+import Link from 'next/link'
 import React from 'react'
+import StatsCard from './StatsCard'
+import BrandDiscription from './BrandDiscription'
 
 export default function HeroSection() {
   return (
@@ -8,54 +12,36 @@ export default function HeroSection() {
           <div className="col-lg-7 content-col" data-aos="fade-up">
             <div className="content">
               <div className="agency-name">
-                <h5>OUR AGENCY</h5>
+                <h5>UNLOCK YOUR INNER CODER</h5>
               </div>
               <div className="main-heading">
                 <h1>
-                  CREATIVE <br />
-                  DESIGN
+                  NO SEARCH <br />
+                  REQUIRED
                 </h1>
               </div>
               <div className="divider" />
-              <div className="description">
-                <p>
-                  Discover innovative strategies for impactful visual
-                  communication. We transform ideas into compelling realities,
-                  ensuring your brand stands out in a crowded marketplace. Our
-                  dedicated team leverages cutting-edge techniques to deliver
-                  exceptional results that resonate with your audience.
-                </p>
-              </div>
+              <BrandDiscription />
               <div className="cta-button">
-                <a href="#services" className="btn">
-                  <span>EXPLORE SERVICES</span>
+                <Link href="/#explore" className="btn">
+                  <span>START YOUR JOURNEY</span>
                   <i className="bi bi-arrow-right" />
-                </a>
+                </Link>
               </div>
             </div>
           </div>
           <div className="col-lg-5" data-aos="zoom-out">
             <div className="visual-content">
               <div className="fluid-shape">
-                <img
-                  src="assets/img/abstract/abstract-1.webp"
+                <Image
+                  width={780}
+                  height={646}
+                  src="/assets/img/abstract/hero-img.png"
                   alt="Abstract Fluid Shape"
                   className="fluid-img"
                 />
               </div>
-              <div className="stats-card">
-                <div className="stats-number">
-                  <h2>5K</h2>
-                </div>
-                <div className="stats-label">
-                  <p>Successful Campaigns</p>
-                </div>
-                <div className="stats-arrow">
-                  <a href="#portfolio">
-                    <i className="bi bi-arrow-up-right" />
-                  </a>
-                </div>
-              </div>
+              <StatsCard />
             </div>
           </div>
         </div>
