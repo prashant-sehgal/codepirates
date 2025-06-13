@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import React from 'react'
 
 export default function ContactSection() {
@@ -17,11 +18,16 @@ export default function ContactSection() {
           <div className="col-lg-4" data-aos="fade-up" data-aos-delay={100}>
             <div className="contact-info-box">
               <div className="icon-box">
-                <i className="bi bi-geo-alt" />
+                <i className="bi bi-linkedin" />
               </div>
               <div className="info-content">
-                <h4>Our Address</h4>
-                <p>1842 Maple Avenue, Portland, Oregon 97204</p>
+                <h4>LinkedIn</h4>
+                <Link
+                  href="https://www.linkedin.com/in/prashantsehgal~"
+                  target="_blank"
+                >
+                  linkedin.com/prashantsehgal~
+                </Link>
               </div>
             </div>
           </div>
@@ -32,39 +38,34 @@ export default function ContactSection() {
               </div>
               <div className="info-content">
                 <h4>Email Address</h4>
-                <p>info@example.com</p>
-                <p>contact@example.com</p>
+                <Link
+                  href="mailto:prashant_sehgal@outlook.com?subject=%23CodePirates%20-%20Quick%20Question"
+                  target="_blank"
+                >
+                  prashant_sehgal@outlook.com
+                </Link>
               </div>
             </div>
           </div>
           <div className="col-lg-4" data-aos="fade-up" data-aos-delay={300}>
             <div className="contact-info-box">
               <div className="icon-box">
-                <i className="bi bi-headset" />
+                <i className="bi bi-twitter-x" />
               </div>
               <div className="info-content">
-                <h4>Hours of Operation</h4>
-                <p>Sunday-Fri: 9 AM - 6 PM</p>
-                <p>Saturday: 9 AM - 4 PM</p>
+                <h4>X</h4>
+                <Link href="https://x.com/prashantsehgal_" target="_blank">
+                  x.com/prashantsehgal_
+                </Link>
               </div>
             </div>
           </div>
         </div>
       </div>
       {/* Google Maps (Full Width) */}
-      <div className="map-section" data-aos="fade-up" data-aos-delay={200}>
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d48389.78314118045!2d-74.006138!3d40.710059!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a22a3bda30d%3A0xb89d1fe6bc499443!2sDowntown%20Conference%20Center!5e0!3m2!1sen!2sus!4v1676961268712!5m2!1sen!2sus"
-          width="100%"
-          height={500}
-          style={{ border: 0 }}
-          allowFullScreen
-          loading="lazy"
-          referrerPolicy="no-referrer-when-downgrade"
-        />
-      </div>
+
       {/* Contact Form Section (Overlapping) */}
-      <div className="container form-container-overlap">
+      <div className="container form-container-overlap mt-1">
         <div
           className="row justify-content-center"
           data-aos="fade-up"
