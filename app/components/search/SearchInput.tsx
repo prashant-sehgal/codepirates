@@ -1,6 +1,5 @@
 import React from 'react'
 import styles from './Search.module.css'
-import { useSearch } from '@/app/contexts/SearchContext'
 
 interface Props {
   query: string
