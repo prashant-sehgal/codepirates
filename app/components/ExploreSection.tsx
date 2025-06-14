@@ -1,14 +1,15 @@
 import React from 'react'
+import Filters from './Filters'
 
 export default function ExploreSection() {
   return (
-    <section id="portfolio" className="portfolio section">
+    <section id="explore" className="portfolio section">
       {/* Section Title */}
       <div className="container section-title" data-aos="fade-up">
-        <h2>Portfolio</h2>
+        <h2>Explore</h2>
         <div>
           <span>Check Our</span>{' '}
-          <span className="description-title">Portfolio</span>
+          <span className="description-title">Best Picks</span>
         </div>
       </div>
       {/* End Section Title */}
@@ -19,27 +20,7 @@ export default function ExploreSection() {
           data-layout="masonry"
           data-sort="original-order"
         >
-          <ul
-            className="portfolio-filters isotope-filters"
-            data-aos="fade-up"
-            data-aos-delay={200}
-          >
-            <li data-filter="*" className="filter-active">
-              <i className="bi bi-grid-3x3" /> All Projects
-            </li>
-            <li data-filter=".filter-ui">
-              <i className="bi bi-phone" /> UI/UX
-            </li>
-            <li data-filter=".filter-development">
-              <i className="bi bi-code-slash" /> Development
-            </li>
-            <li data-filter=".filter-photography">
-              <i className="bi bi-camera" /> Photography
-            </li>
-            <li data-filter=".filter-marketing">
-              <i className="bi bi-graph-up" /> Marketing
-            </li>
-          </ul>
+          <Filters />
           <div
             className="row g-4 isotope-container"
             data-aos="fade-up"
