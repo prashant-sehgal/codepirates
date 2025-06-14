@@ -5,6 +5,8 @@ export interface TypeFilter extends mongoose.Document {
   title: string
   filter: string
   icon: string
+  createdAt: Date
+  updatedAt: Date
 }
 
 const filterSchema = new mongoose.Schema<TypeFilter>(
@@ -23,6 +25,7 @@ const filterSchema = new mongoose.Schema<TypeFilter>(
     },
   },
   {
+    timestamps: true,
     toJSON: { virtuals: true },
     toObject: { virtuals: true },
   }

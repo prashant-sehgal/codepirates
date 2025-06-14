@@ -6,6 +6,9 @@ export interface TypeMessage extends mongoose.Document {
   email: string
   subject: string
   message: string
+  replied: boolean
+  createdAt: Date
+  updatedAt: Date
 }
 
 const messageSchema = new mongoose.Schema<TypeMessage>(
@@ -32,8 +35,16 @@ const messageSchema = new mongoose.Schema<TypeMessage>(
       trim: true,
       required: [true, 'Message must have message body.'],
     },
+    replied: {
+      type: Boolean,
+      default: false,
+    },
   },
-  { timestamps: true, toJSON: { virtuals: true }, toObject: { virtuals: true } }
+  {
+    timestamps: true,
+    toJSON: { virtuals: true },
+    toObject: { virtuals: true },
+  }
 )
 
 const Message =
