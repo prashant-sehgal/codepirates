@@ -43,7 +43,7 @@ export default async function page(props: Readonly<Props>) {
         <Title>{video.title}</Title>
         <Creator creatorProfileUrl={video.creatorProfileUrl} />
         <ExpandBox title="More Videos Like This" id="videos">
-          {[...video.relatedVideos, ...video.relatedVideos].map((video) => (
+          {video.relatedVideos.map((video) => (
             <VideoLink video={video} key={video.id} />
           ))}
         </ExpandBox>
