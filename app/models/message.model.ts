@@ -48,7 +48,7 @@ const messageSchema = new mongoose.Schema<TypeMessage>(
 )
 
 const Message =
-  mongoose.models.Message ||
+  (mongoose.models.Message as mongoose.Model<TypeMessage>) ||
   mongoose.model<TypeMessage>('Message', messageSchema)
 
 export default Message

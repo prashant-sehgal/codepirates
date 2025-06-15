@@ -6,3 +6,21 @@
   width: 100%;
   aspect-ratio: 16/9;
 }
+
+.videoLink {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  font-size: 0.8rem;
+  padding: 0.2rem;
+  border-radius: 0.3rem;
+}
+
+.videoLink img {
+  width: 5rem;
+  height: 3rem;
+}
+
+.videoLink:hover {
+  background: rgba(255, 255, 255, 0.159);
+}

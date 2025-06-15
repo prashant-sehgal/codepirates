@@ -15,7 +15,7 @@ export interface TypeRelatedVideo extends mongoose.Document {
 
 export interface TypeVideo extends mongoose.Document {
   id: string
-  filter: TypeFilter
+  filter: string
   title: string
   description: string
   keywords: [string]
@@ -58,9 +58,7 @@ const RelatedVideoSchema = new mongoose.Schema<TypeRelatedVideo>({
 const videoSchema = new mongoose.Schema<TypeVideo>(
   {
     filter: {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: 'Filter',
-      index: true,
+      type: String,
       required: [true, 'Video must have a filter.'],
     },
     title: {
@@ -152,5 +150,7 @@ videoSchema.pre('save', function (this: TypeVideo, next) {
   next()
 })
 
-const Video = mongoose.models.Video || mongoose.model('Video', videoSchema)
+const Video =
+  (mongoose.models.Video as mongoose.Model<TypeVideo>) ||
+  mongoose.model<TypeVideo>('Video', videoSchema)
 export default Video
