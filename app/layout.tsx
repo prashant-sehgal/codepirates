@@ -19,6 +19,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <meta name="google-adsense-account" content="ca-pub-3134570032680567" />
         {/* Vendor CSS Files */}
         <link
           href="/assets/vendor/bootstrap/css/bootstrap.min.css"
@@ -48,6 +49,13 @@ export default function RootLayout({
           <Footer />
           <ScrollToTop />
         </SearchProvider>
+
+        {/* Google Adsense */}
+        <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3134570032680567"
+          crossOrigin="anonymous"
+        ></script>
 
         {/* Vendor JS Files */}
         <script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
