@@ -1,11 +1,11 @@
 import React from 'react'
-import * as db from '../lib/db'
-import Filter from '../models/filter.model'
+import { TypeFilter } from '../models/filter.model'
 
-export default async function Filters() {
-  await db.connect()
-  const filters = (await Filter.find()) || []
+interface Props {
+  filters: TypeFilter[]
+}
 
+export default function Filters(props: Readonly<Props>) {
   return (
     <ul
       className="portfolio-filters isotope-filters"
@@ -15,7 +15,7 @@ export default async function Filters() {
       <li data-filter="*" className="filter-active">
         <i className="bi bi-grid-3x3" /> All Projects
       </li>
-      {filters.map((filter) => (
+      {props.filters.map((filter) => (
         <li data-filter={`.filter-${filter.filter}`} key={filter.id}>
           <i className={`bi bi-${filter.icon}`} />
           {filter.title}

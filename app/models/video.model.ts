@@ -22,6 +22,7 @@ export interface TypeVideo extends mongoose.Document {
   keyPoints: [string]
   videoUrl: string
   creatorProfileUrl: string
+  thumbnailUrl: string
   slug: string
   resources: TypeResource[]
   relatedVideos: TypeRelatedVideo[]
@@ -100,6 +101,10 @@ const videoSchema = new mongoose.Schema<TypeVideo>(
     creatorProfileUrl: {
       type: String,
       required: [true, 'Video must have a creatorProfileUrl.'],
+    },
+    thumbnailUrl: {
+      type: String,
+      required: [true, 'Video must have a thumbnailUrl.'],
     },
     resources: {
       type: [ResourceSchema],

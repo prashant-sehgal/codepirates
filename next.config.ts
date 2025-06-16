@@ -1,9 +1,19 @@
 import type { NextConfig } from 'next'
 
 const nextConfig: NextConfig = {
-  /* config options here */
   images: {
-    remotePatterns: [new URL('https://img.youtube.com/**')],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'i.ytimg.com',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'img.youtube.com',
+        pathname: '/**',
+      },
+    ],
   },
 }
 
