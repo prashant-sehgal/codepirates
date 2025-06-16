@@ -6,6 +6,7 @@ import ScrollToTop from './components/ScrollToTop'
 import SearchProvider from './contexts/search.context'
 import Search from './components/search/Search'
 import TopSliderLoader from './components/TopSliderLoader'
+import { Suspense } from 'react'
 
 export const metadata: Metadata = {
   title: 'Code Pirates',
@@ -43,7 +44,9 @@ export default function RootLayout({
         <link href="/assets/css/main.css" rel="stylesheet" />
       </head>
       <body>
-        <TopSliderLoader />
+        <Suspense fallback={null}>
+          <TopSliderLoader />
+        </Suspense>
         <SearchProvider>
           <Search />
           <Header />
