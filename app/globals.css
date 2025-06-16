@@ -1,0 +1,5 @@
+#nprogress .bar {
+  background: var(
+    --accent-color
+  ) !important; /* A vibrant pink, change to your desired color */
+}
