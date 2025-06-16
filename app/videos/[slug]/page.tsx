@@ -1,4 +1,5 @@
 import React from 'react'
+import Markdown from 'react-markdown'
 import * as db from '@/app/lib/db'
 import Video from '@/app/models/video.model'
 import { notFound } from 'next/navigation'
@@ -15,6 +16,7 @@ import Meta from './Meta'
 import Creator from './Creator'
 import Resource from './Resource'
 import VideoLink from './VideoLink'
+import ShowMore from '@/app/components/ShowMore/ShowMore'
 
 interface Props {
   params: Promise<{ slug: string }>
@@ -34,9 +36,9 @@ export default async function page(props: Readonly<Props>) {
       <MediaSection>
         <VideoFrame videoUrl={video.videoUrl} />
         <Keywords keywords={video.keywords} />
-        <ExpandBox title="Description" id="description" state="show">
-          <p>{video.description}</p>
-        </ExpandBox>
+        <ShowMore>
+          <Markdown>{video.description}</Markdown>
+        </ShowMore>
       </MediaSection>
       <Details>
         <Meta filter={filter.title} />
