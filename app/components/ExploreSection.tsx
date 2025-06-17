@@ -5,6 +5,9 @@ import * as db from '../lib/db'
 import Filter, { TypeFilter } from '../models/filter.model'
 import VideoCard from './VideoCard'
 
+// THIS IS THE KEY CHANGE: Forces dynamic rendering on every request
+export const dynamic = 'force-dynamic'
+
 export default async function ExploreSection() {
   await db.connect()
   const videos = await Video.find()
