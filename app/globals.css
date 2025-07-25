@@ -1,0 +1,10 @@
+@import "tailwindcss";
+
+* {
+  font-family: var(--font-poppins);
+}
+
+body {
+  background: var(--color-stone-950);
+  color: var(--color-white);
+}
