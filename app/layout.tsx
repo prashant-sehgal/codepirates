@@ -7,6 +7,8 @@ import 'remixicon/fonts/remixicon.css';
 import Header from './components/Header';
 import Footer from './components/Footer';
 
+import PromptProvider from './contexts/PromptContext';
+
 const poppins = Poppins({
   weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
   subsets: ['latin'],
@@ -26,9 +28,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={poppins.variable}>
-        <Header />
-        {children}
-        <Footer />
+        <PromptProvider>
+          <Header />
+          {children}
+          <Footer />
+        </PromptProvider>
+
         <SpeedInsights />
       </body>
     </html>
