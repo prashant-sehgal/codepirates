@@ -9,7 +9,7 @@ export default function SecondaryButton(
 ) {
   return (
     <button
-      className={`${props.className} rounded-md cursor-pointer bg-stone-900 hover:bg-stone-800`}
+      className={`${props.className} rounded-md cursor-pointer bg-stone-900 hover:bg-stone-800 flex justify-center items-center`}
       onClick={() => props.onPress()}
     >
       {props.children}
