@@ -53,16 +53,16 @@ export default function Login() {
           <SecondaryButton className="w-full py-2 px-4" onPress={() => ''}>
             <SocialAuth
               imgSrc="/microsoft-icon.svg"
-              title="Continue wth Google"
+              title="Continue wth Microsoft"
             />
           </SecondaryButton>
           <SecondaryButton className="w-full py-2 px-4" onPress={() => ''}>
-            <SocialAuth imgSrc="/apple-icon.svg" title="Continue wth Google" />
+            <SocialAuth imgSrc="/apple-icon.svg" title="Continue wth Apple" />
           </SecondaryButton>
           <SecondaryButton className="w-full py-2 px-4" onPress={() => ''}>
             <SocialAuth
               imgSrc="/facebook-icon.svg"
-              title="Continue wth Google"
+              title="Continue wth Facebook"
             />
           </SecondaryButton>
         </div>
