@@ -3,6 +3,7 @@ import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Poppins } from 'next/font/google';
 import './globals.css';
 import 'remixicon/fonts/remixicon.css';
+import 'react-loading-skeleton/dist/skeleton.css';
 
 import Header from './components/Header';
 import Footer from './components/Footer';
